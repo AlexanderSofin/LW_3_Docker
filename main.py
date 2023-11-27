@@ -7,7 +7,7 @@ Q_RANGE = 10
 LAN_GE = 16
 
 
-def egcd(a, b):  # Расширенный алг Эвклида
+def egcd(a, b):  # расширенный алгоритм Евклида
     if a == 0:
         return (b, 0, 1)
     g, y, x = egcd(b % a, a)
@@ -17,7 +17,7 @@ def egcd(a, b):  # Расширенный алг Эвклида
 def mod_inverse(a, m):
     g, x, y = egcd(a, m)
     if g != 1:
-        raise Exception('Приватный ключь не имеет обратного модуля')
+        raise Exception('Приватный ключ не имеет обратного модуля')
     return x % m
 
 
